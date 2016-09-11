@@ -1,0 +1,23 @@
+<div layout="row" layout-align="center center" layout-fill ng-controller="LoginCtrl">
+    <form name="loginfrm" class="md-whiteframe-z1 card-form" layout="column" ng-submit="login()" novalidate>
+        <md-toolbar class="md-primary">
+            <h1 class="md-toolbar-tools">Log in</h1>
+        </md-toolbar>
+        <div class="md-padding">
+            <md-input-container class="md-block md-icon-float">
+                <label>E-mail</label>
+                <md-icon class="fa-envelope-o"></md-icon>
+                <input type="email" ng-model="usuario.email" required>
+            </md-input-container>
+            <md-input-container class="md-block md-icon-float">
+                <label>Senha</label>
+                <md-icon class="fa-key"></md-icon>
+                <input type="password" ng-model="usuario.senha" required>
+            </md-input-container>
+            <div layout="column" layout-align="center">
+                <md-button type="submit" class="md-raised md-primary">Entrar</md-button>
+                <md-button class="md-primary" href="#/criar">Criar Conta</md-button>
+            </div>
+        </div>
+    </form>
+</div>

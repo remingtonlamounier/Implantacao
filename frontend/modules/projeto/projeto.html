@@ -1,0 +1,46 @@
+<div ng-controller="ProjetoCtrl">
+    <md-card>
+        <md-card-title class="card-title-bg">
+            <md-card-title-text>
+                <span class="md-title">Projetos</span>
+                <span class="md-subhead">Adicione, altere, exclua projetos...</span>
+            </md-card-title-text>
+        </md-card-title>
+        
+        <md-card-content>
+            
+            <div ng-if="!projetos.data.length">
+                <h3 class="md-title">Criando projetos</h3>
+                <p class="md-body-1">
+                    Clique no botão <i class="fa fa-plus"></i> abaixo, em seguida dê um nome ao seu projeto e descreva claramente o quê deseja. Por exemplo, supondo que você deseja criar um site para divulgar seu trabalho:
+                </p>
+                <p class="example">
+                    <strong>Nome</strong>: Site 1<br>
+                    <strong>Descrição</strong>: Como consultor gostaria de um site para divulgar o meu trabalho. O site precisa ter uma área administrativa para que eu possa publicar fotos e escrever artigos, assim os visitantes poderam ver o trabalho que presto para as empresas.
+                </p>
+            </div>
+            
+            <md-list layout-gt-sm="row">
+                <md-list-item flex-gt-sm="50" class="md-whiteframe-z1 md-2-line" role="link" ng-repeat="item in projetos.data">
+                    <div class="md-list-item-text inset" ng-click="editProject($event, item)">
+                        <h3>{{item.nome}}</h3>
+                        <p>{{$root.charsAt(item.descricao,180)}}</p>
+                    </div>
+                    <md-button class="md-icon-button md-secondary" aria-label="Excluir" ng-click="delProject($event, item)">
+                        <md-tooltip>
+                            Excluir Projeto
+                        </md-tooltip>
+                        <md-icon class="fa-trash"></md-icon>
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+    
+    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Adicionar" ng-click="addProject($event)">
+        <md-tooltip>
+            Adicionar Projeto
+        </md-tooltip>
+        <md-icon class="fa-plus"></md-icon>
+    </md-button>
+</div>

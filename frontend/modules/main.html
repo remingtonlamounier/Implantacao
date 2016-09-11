@@ -1,0 +1,58 @@
+<md-toolbar layout="row" layout-align-gt-sm="center center">
+    <md-button class="md-icon-button" ng-click="toggleMenu('left')" hide-gt-sm aria-label="Menu">
+        <md-icon class="fa-list"></md-icon>
+    </md-button>
+    <h3>Apps Company</h3>
+</md-toolbar>
+
+<div layout="row" class="transparent-bg" flex>
+    <md-sidenav class="md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+
+        <md-list ng-click="toggleMenu('left')">
+            <md-subheader class="md-no-sticky">{{usuario.email}}</md-subheader>
+            
+            <md-list-item role="link" href="#/home">
+                <md-icon class="fa-home"></md-icon>
+                <p class="md-list-item-text">
+                    Home
+                </p>
+            </md-list-item>
+            
+            <md-list-item role="link" href="#/projetos">
+                <md-icon class="fa-puzzle-piece"></md-icon>
+                <p class="md-list-item-text">
+                    Projetos
+                </p>
+            </md-list-item>
+
+            <div ng-if="isDeveloper()">
+                <md-divider></md-divider>
+                <md-subheader class="md-no-sticky">Desenvolvimento</md-subheader>
+                
+                <md-list-item role="link" href="#/taskboard">
+                    <md-icon class="fa-th-large"></md-icon>
+                    <p class="md-list-item-text">
+                        Taskboard
+                    </p>
+                </md-list-item>
+            </div>
+            
+            <div ng-if="usuario.grupo === 'admins'">
+                <md-divider></md-divider>
+                <md-subheader class="md-no-sticky">Administração</md-subheader>
+                
+                <md-list-item role="link" href="#/usuarios">
+                    <md-icon class="fa-users"></md-icon>
+                    <p class="md-list-item-text">
+                        Usuários
+                    </p>
+                </md-list-item>
+            </div>
+    
+        </md-list>
+    </md-sidenav>
+
+    <md-content class="darkwhite-bg" ui-view flex>
+
+    </md-content>
+</div>

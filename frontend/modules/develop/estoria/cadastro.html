@@ -1,0 +1,38 @@
+<md-dialog aria-label="Cadastrar Estória" flex-gt-sm="40">
+    <form name="cadfrm" ng-submit="save()" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Criar estória</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="Cancelar">
+                    <md-icon class="fa-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                    <label>Ator</label>
+                    <input type="text" name="ator" ng-model="estoria.ator" placeholder="Quem?" required minlength="3" md-maxlength="30">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Descrição</label>
+                    <textarea name="descricao" ng-model="estoria.descricao" placeholder="O quê?" cols="5" required minlength="20" md-maxlength="135"></textarea>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Objetivo</label>
+                    <textarea name="objetivo" ng-model="estoria.objetivo" placeholder="Para quê?" cols="5" required minlength="20" md-maxlength="165"></textarea>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button type="submit" class="md-raised md-primary">
+                Confirmar
+            </md-button>
+            <md-button ng-click="cancel()">
+                Cancelar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

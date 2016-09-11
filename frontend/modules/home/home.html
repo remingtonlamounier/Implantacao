@@ -1,0 +1,36 @@
+<div ng-controller="HomeCtrl">
+    <md-card>
+        <md-card-title class="card-title-bg">
+            <md-card-title-text>
+                <span class="md-title">Sr.(a) {{usuario.nome}}</span>
+                <span class="md-subhead">Seja bem vindo a plataforma</span>
+            </md-card-title-text>
+        </md-card-title>
+        
+        <md-card-content>
+            <div ng-if="usuario.grupo === 'users' && !projetos.data.length">
+                <h3 class="md-title">Vamos começar?</h3>
+                <p class="md-body-1">
+                    Crie um projeto acessando o menu esquerdo "Projetos" e depois siga as instruções.
+                </p>
+            </div>
+            
+            <h3 class="md-title">Atividades</h3>
+            <md-list layout-align="start start">
+                <md-list-item ng-if="!atividades.length">
+                    <md-icon md-font-icon="fa-exclamation-circle"></md-icon>
+                    <p class="md-body-1">Nenhuma atividade recente</p>
+                </md-list-item>
+
+                <md-list-item class="md-2-line" ng-repeat="item in atividades">
+                    <md-icon class="fa-clock-o"></md-icon>
+                    <div class="md-list-item-text">
+                        <h4>{{getActivity(item.descricao)}}</h4>
+                        <p>{{timeElapsed(item.createdAt)}}</p>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>

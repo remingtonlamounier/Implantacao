@@ -1,0 +1,26 @@
+<div ng-controller="DevProjetoCtrl">
+    <md-card>
+        <md-card-title class="card-title-bg">
+            <md-card-title-text>
+                <span class="md-title">Projetos</span>
+                <span class="md-subhead">Selecione um projeto para começar suas estórias</span>
+            </md-card-title-text>
+        </md-card-title>
+        
+        <md-card-content>
+            <md-list layout-gt-sm="row">
+                <md-list-item ng-if="!projetos.length">
+                    <md-icon md-font-icon="fa-exclamation-circle"></md-icon>
+                    <p class="md-body-1">Nenhum projeto para desenvolver</p>
+                </md-list-item>                
+                
+                <md-list-item flex-gt-sm="50" class="md-whiteframe-z1 md-2-line" role="link" ng-repeat="item in projetos" href="#/projeto/{{item.id}}">
+                    <div class="md-list-item-text inset">
+                        <h3>{{item.nome}}</h3>
+                        <p>{{$root.charsAt(item.descricao, 100)}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Material - Starter App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-app="starterapp" ng-cloak>
+
+    <!-- Livereload script for development only (stripped during dist build) -->
+    <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+    <!-- JS from Bower Components -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/ngMask/dist/ngMask.min.js"></script>
+    <!-- Add New Bower Component JS Above -->
+
+    <!-- 3rd party Components -->
+    <script src="js/ojs-db.min.js"></script>
+    
+    <!-- Main App JS -->
+    <script src="app.js"></script>
+    <script src="modules/main.js"></script>
+    <script src="modules/home/home.js"></script>
+    <script src="modules/login/login.js"></script>
+    <script src="modules/login/criar.js"></script>
+    <script src="modules/auth/auth.js"></script>
+    <script src="modules/utils/dao.js"></script>
+    <script src="modules/utils/dialogs.js"></script>
+    <script src="modules/projeto/projeto.js"></script>
+    <script src="modules/projeto/cadastro.js"></script>
+    <script src="modules/develop/projeto/projeto.js"></script>
+    <script src="modules/develop/estoria/estoria.js"></script>
+    <script src="modules/develop/estoria/cadastro.js"></script>
+    <script src="modules/admin/usuario/usuario.js"></script>
+    <script src="modules/admin/usuario/cadastro.js"></script>
+    <!-- Add New Component JS Above -->
+
+    <div layout="column" layout-fill ui-view>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* angular material extensions */
+md-toast.md-center {
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+}
+
+/* angular material overrides */
+md-list-item .md-secondary-container, md-list-item .md-list-item-inner .md-secondary-container {
+    margin: 0 auto;
+}
+
+/* font icons */
+.fa {
+    font-size: 1.5em;
+}
+
+md-icon, .md-button.md-icon-button {
+    height: auto;
+    min-height: auto;
+}
+
+.md-avatar-icon.fa:before {
+    margin-left: 2px;
+}
+
+.md-fab.md-fab-bottom-right {
+    position: fixed !important;
+}
+
+/* angular material card's */
+md-card md-toolbar {
+    min-height: 0;
+}
+
+md-card .md-toolbar-tools {
+    height: 48px;
+    background-color: white !important;
+}
+
+md-card .md-toolbar-tools .md-icon-button {
+    margin: 0;
+}
+
+md-card .md-toolbar-tools, md-card .md-toolbar-tools md-icon {
+    color: #333;
+}
+
+md-card .md-toolbar-tools md-icon {
+    font-size: 16px;
+}
+
+md-card-content p.md-body-1 {
+    text-align: justify;
+}
+
+/* app styles */
+.transparent-bg {
+    background: rgba(0, 0, 0, 0);
+}
+
+.darkwhite-bg {
+    background-image: url(../images/content-bg.jpg);
+    background-size: cover;
+    background-color: #f0f0f0;
+}
+
+.card-form {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.example {
+    background-color: #f0f0f0;
+    font-size: 14px;
+    padding: 10px;
+}
+
+div.example {
+    margin: 15px 0;
+}
+
+.card-title-bg {
+    background-image: url(../images/callout.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-color: #607D8B;
+    color: #fff;
+}
+
+/* specific layout styles */
+@media (min-width: 960px) {
+    .layout-gt-sm-row md-list-item:nth-child(even) {
+        margin-left: 12px;
+    }
+}
+
+/* validation styles */
+.inputdemoErrors .inputErrorsApp {
+    min-height: 48px;
+}
+
+.inputdemoErrors md-input-container > p {
+    font-size: 0.8em;
+    text-align: left;
+    width: 100%;
+}

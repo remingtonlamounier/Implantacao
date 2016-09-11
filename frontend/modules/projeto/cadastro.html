@@ -1,0 +1,42 @@
+<md-dialog aria-label="Cadastrar Projeto" flex-gt-sm="40">
+    <form name="cadfrm" ng-submit="save()" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Criar projeto</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="Cancelar">
+                    <md-icon class="fa-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                    <label>Nome</label>
+                    <input type="text" name="nome" ng-model="projeto.nome" placeholder="Nome do Projeto" required minlength="3" md-maxlength="30">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Descrição</label>
+                    <textarea name="descricao" ng-model="projeto.descricao" placeholder="Descreva claramente o quê você deseja" cols="5" required minlength="30" md-maxlength="720"></textarea>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Urgência</label>
+                    <md-select ng-model="projeto.urgencia" required>
+                        <md-option value="baixa">Baixa</md-option>
+                        <md-option value="media">Média</md-option>
+                        <md-option value="alta">Alta</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button type="submit" class="md-raised md-primary">
+                Confirmar
+            </md-button>
+            <md-button ng-click="cancel()">
+                Cancelar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,54 @@
+<form name="newfrm" ng-controller="CriarCtrl" ng-submit="create()" novalidate>
+    <md-toolbar layout="row" layout-align="center center">
+        <h3>Criar conta</h3>
+    </md-toolbar>
+
+    <div class="md-whiteframe-z1" style="background-color:#fff;max-width:640px;margin:auto;padding:10px 0 25px">
+        <div class="card-form" layout="column">
+            <md-input-container class="md-block">
+                <label>Nome</label>
+                <input type="text" name="nome" ng-model="usuario.nome" placeholder="Nome completo" required minlength="3" maxlength="60">
+                <div ng-messages="newfrm.nome.$error" role="alert">
+                    <div ng-message="required" ng-hide="!newfrm.nome.$error.required">Campo obrigatório</div>
+                    <div ng-message="minlength" ng-hide="!newfrm.nome.$error.minlength">O nome deve ter pelo menos 3 caracteres</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>E-mail</label>
+                <input type="email" name="email" ng-model="usuario.email" placeholder="usuario@dominio.com" required minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/">
+                <div ng-messages="newfrm.email.$error" role="alert">
+                    <div ng-message="required" ng-hide="!newfrm.email.$error.required">Campo obrigatório</div>
+                    <div ng-message-exp="['minlength', 'maxlength']" ng-hide="!newfrm.email.$error.minlength && !newfrm.email.$error.maxlength">O e-mail deve ter entre 10 e 100 caracteres</div>
+                    <div ng-message="pattern" ng-hide="!newfrm.email.$error.pattern">Endereço de e-mail inválido</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Senha</label>
+                <input type="password" name="senha" ng-model="usuario.senha" required minlength="6" maxlength="20">
+                <div ng-messages="newfrm.senha.$error" role="alert">
+                    <div ng-message="required" ng-hide="!newfrm.senha.$error.required">Campo obrigatório</div>
+                    <div ng-message-exp="['minlength', 'maxlength']" ng-hide="!newfrm.senha.$error.minlength && !newfrm.senha.$error.maxlength">A senha deve ter entre 6 e 20 caracteres</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Confirma Senha</label>
+                <input type="password" name="confirmaSenha" ng-model="usuario.confirmaSenha" required>
+                <div ng-messages="newfrm.confirmaSenha.$error" role="alert">
+                    <div ng-message="required" ng-hide="!newfrm.confirmaSenha.$error.required">Campo obrigatório</div>
+                    <div ng-message="isEqual" ng-hide="arePassEquals()">A senha e a confirmação de senha estão diferentes</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Telefone</label>
+                <input type="tel" name="telefone" ng-model="usuario.telefone" placeholder="(xx) xxxxx-xxxx" maxlength="15" mask="(99) 9?9999-9999" clean="true" restrict="reject">
+                <div ng-messages="newfrm.telefone.$error" role="alert">
+                    <div ng-message="required" ng-hide="!newfrm.telefone.$error.required">Campo obrigatório</div>
+                    <div ng-message="maxlength" ng-hide="!newfrm.telefone.$error.maxlength">O telefone deve ter no máximo 12 dígitos</div>
+                </div>
+            </md-input-container>            
+            <div layout="column" layout-align="center">
+                <md-button type="submit" class="md-raised md-primary">Criar</md-button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+<div ng-controller="UsuarioCtrl">
+    <md-card>
+        <md-card-title class="card-title-bg">
+            <md-card-title-text>
+                <span class="md-title">Usuários</span>
+                <span class="md-subhead">Selecione um usuário para alterar</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-list layout-gt-sm="row">
+                <md-list-item ng-if="!usuarios.data.length">
+                    <md-icon md-font-icon="fa-exclamation-circle"></md-icon>
+                    <p class="md-body-1">Nenhum usuário cadastrado</p>
+                </md-list-item>                
+                
+                <md-list-item flex-gt-sm="50" class="md-whiteframe-z1 md-2-line" ng-repeat="item in usuarios.data" ng-click="editUser(item)">
+                    <md-icon class="md-avatar-icon" md-font-icon="fa-user"></md-icon>
+                    <div class="md-list-item-text">
+                        <h3>{{item.email}}</h3>
+                        <p>{{item.nome}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>
